@@ -1,0 +1,148 @@
+.equal-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.5rem
+}
+.columns {
+    align-items: stretch;
+}
+.card-content h2 {
+    min-height: 60px;
+}
+.mycards {
+    height: 180px;
+}
+.hover-card {
+    transition: all 0.3s ease;
+}
+#about img {
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+/* Лёгкий hover-эффект */
+#about img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.5);
+}
+
+.hover-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+.but_indent {
+    margin-left: 10px;
+}
+.card_down {
+    padding-bottom: 3rem;
+}
+.box_popular {
+    padding: 3rem 15rem;
+}
+/* ===== FAQ accordion (норма
+Профильная математльно раскрывается) ===== */
+.faq-list {
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+/* сама карточка (details) */
+.faq-item {
+    margin-bottom: 1.25rem;
+    border-radius: 22px;
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.faq-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 26px 70px rgba(0, 0, 0, 0.45);
+}
+
+/* summary — заголовок вопроса */
+.faq-question {
+    cursor: pointer;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+
+    margin: 0;
+    user-select: none;
+
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.15rem;
+    line-height: 1.25;
+}
+
+/* убрать стандартный треугольник браузера у summary */
+.faq-question::-webkit-details-marker { display: none; }
+.faq-question::marker { content: ""; }
+
+/* правая стрелка */
+.faq-chevron {
+    margin-left: auto;
+    opacity: 0.85;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+details[open] .faq-chevron {
+    transform: rotate(180deg);
+    opacity: 1;
+}
+
+/* ===== Главное: делаем "выпадение" через max-height ===== */
+
+/* контейнер ответа - закрыт */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+
+    padding: 0 1.5rem;           /* оставим боковые */
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.05rem;
+    line-height: 1.7;
+
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: max-height 0.35s ease, opacity 0.25s ease, transform 0.25s ease, padding 0.25s ease;
+}
+
+/* открыт - плавно увеличиваем высоту + даём отступы */
+details[open] .faq-answer {
+    max-height: 260px;           /* можно увеличить, если ответы длиннее */
+    opacity: 1;
+    transform: translateY(0);
+
+    padding: 1rem 1.5rem 1.25rem 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* мобилка */
+@media (max-width: 768px) {
+    .faq-question {
+        padding: 1.1rem 1.1rem;
+        font-size: 1.05rem;
+    }
+    .faq-answer {
+        padding: 0 1.1rem;
+        font-size: 1rem;
+    }
+    details[open] .faq-answer {
+        padding: 0.9rem 1.1rem 1.1rem 1.1rem;
+        max-height: 360px; /* на мобилке строки длиннее */
+    }
+}
+/* ВАЖНО: отменяем фиксированную высоту карточек для FAQ */
+#faq .card {
+    height: auto !important;
+}
