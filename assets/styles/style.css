@@ -23,7 +23,6 @@
     transition: all 0.3s ease;
 }
 
-/* Лёгкий hover-эффект */
 #about img:hover {
     transform: translateY(-5px);
     box-shadow: 0 35px 70px rgba(0, 0, 0, 0.5);
@@ -42,8 +41,6 @@
 .box_popular {
     padding: 3rem 15rem;
 }
-/* ===== FAQ accordion (норма
-Профильная математльно раскрывается) ===== */
 .faq-list {
     max-width: 1050px;
     margin: 0 auto;
@@ -67,7 +64,6 @@
     box-shadow: 0 26px 70px rgba(0, 0, 0, 0.45);
 }
 
-/* summary — заголовок вопроса */
 .faq-question {
     cursor: pointer;
     padding: 1.25rem 1.5rem;
@@ -84,11 +80,9 @@
     line-height: 1.25;
 }
 
-/* убрать стандартный треугольник браузера у summary */
 .faq-question::-webkit-details-marker { display: none; }
 .faq-question::marker { content: ""; }
 
-/* правая стрелка */
 .faq-chevron {
     margin-left: auto;
     opacity: 0.85;
@@ -100,14 +94,11 @@ details[open] .faq-chevron {
     opacity: 1;
 }
 
-/* ===== Главное: делаем "выпадение" через max-height ===== */
-
-/* контейнер ответа - закрыт */
 .faq-answer {
     max-height: 0;
     overflow: hidden;
 
-    padding: 0 1.5rem;           /* оставим боковые */
+    padding: 0 1.5rem;
     color: rgba(255, 255, 255, 0.9);
     font-size: 1.05rem;
     line-height: 1.7;
@@ -117,17 +108,14 @@ details[open] .faq-chevron {
     transition: max-height 0.35s ease, opacity 0.25s ease, transform 0.25s ease, padding 0.25s ease;
 }
 
-/* открыт - плавно увеличиваем высоту + даём отступы */
 details[open] .faq-answer {
-    max-height: 260px;           /* можно увеличить, если ответы длиннее */
+    max-height: 260px;
     opacity: 1;
     transform: translateY(0);
 
     padding: 1rem 1.5rem 1.25rem 1.5rem;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
-
-/* мобилка */
 @media (max-width: 768px) {
     .faq-question {
         padding: 1.1rem 1.1rem;
@@ -139,10 +127,18 @@ details[open] .faq-answer {
     }
     details[open] .faq-answer {
         padding: 0.9rem 1.1rem 1.1rem 1.1rem;
-        max-height: 360px; /* на мобилке строки длиннее */
+        max-height: 360px;
     }
 }
-/* ВАЖНО: отменяем фиксированную высоту карточек для FAQ */
 #faq .card {
     height: auto !important;
+}
+@media (max-width: 768px) {
+    .box_popular {
+        padding: 1.5rem 1rem;
+    }
+
+    .card_down {
+        padding-bottom: 2rem;
+    }
 }
