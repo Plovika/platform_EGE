@@ -142,3 +142,8 @@ details[open] .faq-answer {
         padding-bottom: 2rem;
     }
 }
+
+
+column:hover{
+    color: aqua;
+}

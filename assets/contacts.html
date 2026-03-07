@@ -15,7 +15,6 @@
 <header>
     <nav class="navbar has-background-dark">
         <div class="container">
-
             <div class="navbar-brand">
                 <a class="navbar-item has-text-white" href="../index.html#top">
                     <strong class="has-text-white">HappyEx</strong>
@@ -40,13 +39,11 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </nav>
 </header>
 
 <main>
-
     <section class="hero has-text-centered">
         <div class="hero-body">
             <h1 class="title is-2">Свяжитесь с нами</h1>
@@ -93,7 +90,6 @@
                                     <span class="icon"><i class="fab fa-youtube"></i></span>
                                 </a>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -103,30 +99,42 @@
                         <div class="card-content">
                             <h2 class="title is-4">Форма обратной связи</h2>
 
-                            <form>
+                            <form id="feedbackForm" novalidate>
                                 <div class="field">
-                                    <label class="label">Имя</label>
+                                    <label class="label" for="fullname">ФИО</label>
                                     <div class="control">
-                                        <input class="input" type="text" placeholder="Введите ваше имя">
+                                        <input
+                                                class="input"
+                                                type="text"
+                                                id="fullname"
+                                                name="fullname"
+                                                placeholder="Иванов Иван Иванович"
+                                        >
                                     </div>
                                 </div>
 
                                 <div class="field">
-                                    <label class="label">Email</label>
+                                    <label class="label" for="email">Email</label>
                                     <div class="control has-icons-left">
-                                        <input class="input" type="email" placeholder="example@mail.ru">
+                                        <input
+                                                class="input"
+                                                type="email"
+                                                id="email"
+                                                name="email"
+                                                placeholder="ivanov@mail.ru"
+                                        >
                                         <span class="icon is-small is-left">
-                    <i class="fas fa-envelope"></i>
-                  </span>
+                                            <i class="fas fa-envelope"></i>
+                                        </span>
                                     </div>
                                 </div>
 
                                 <div class="field">
-                                    <label class="label">Тема</label>
+                                    <label class="label" for="topic">Тема</label>
                                     <div class="control">
                                         <div class="select is-fullwidth">
-                                            <select>
-                                                <option>Выберите тему</option>
+                                            <select id="topic" name="topic">
+                                                <option value="">Выберите тему</option>
                                                 <option>Вопрос по курсу</option>
                                                 <option>Пробное занятие</option>
                                                 <option>Возврат средств</option>
@@ -137,16 +145,21 @@
                                 </div>
 
                                 <div class="field">
-                                    <label class="label">Сообщение</label>
+                                    <label class="label" for="message">Сообщение</label>
                                     <div class="control">
-                                        <textarea class="textarea" placeholder="Введите ваше сообщение"></textarea>
+                                        <textarea
+                                                class="textarea"
+                                                id="message"
+                                                name="message"
+                                                placeholder="Введите ваше сообщение"
+                                        ></textarea>
                                     </div>
                                 </div>
 
                                 <div class="field">
                                     <div class="control">
                                         <label class="checkbox">
-                                            <input type="checkbox">
+                                            <input type="checkbox" id="agreement" name="agreement">
                                             Я согласен на обработку персональных данных
                                         </label>
                                     </div>
@@ -154,14 +167,14 @@
 
                                 <div class="field mt-5">
                                     <div class="control">
-                                        <button class="button is-primary is-medium is-fullwidth">
+                                        <button type="submit" class="button is-primary is-medium is-fullwidth">
                                             <span class="icon mr-2"><i class="fas fa-paper-plane"></i></span>
                                             Отправить
                                         </button>
                                     </div>
                                 </div>
-
                             </form>
+
                         </div>
                     </div>
                 </div>
@@ -169,23 +182,21 @@
             </div>
         </div>
     </section>
-
 </main>
 
 <footer class="footer has-background-dark has-text-white" id="contacts">
     <div class="container has-text-centered">
-
         <p class="is-size-5 mb-3">
-      <span class="icon mr-2">
-        <i class="fas fa-phone"></i>
-      </span>
+            <span class="icon mr-2">
+                <i class="fas fa-phone"></i>
+            </span>
             +7 (800) 555-35-35
         </p>
 
         <p class="is-size-5 mb-4">
-      <span class="icon mr-2">
-        <i class="fas fa-envelope"></i>
-      </span>
+            <span class="icon mr-2">
+                <i class="fas fa-envelope"></i>
+            </span>
             krutoisaytEGEOGE@happyex.ru
         </p>
 
@@ -194,7 +205,6 @@
         <p class="is-size-6 has-text-grey-light">
             © 2026 HappyEx. Все права защищены.
         </p>
-
     </div>
 </footer>
 
@@ -211,6 +221,9 @@
         });
     });
 </script>
+
+<script src="scripts/validation.js"></script>
+<script src="scripts/consoleLogger.js"></script>
 
 </body>
 </html>
